@@ -22,5 +22,18 @@ public class MoneyMathApp {
         laptop = 0;
         ipad = 0;
         phone = BigDecimal.ZERO;
+
+        for (int i = 0; i < 1000; i++) {
+            laptop += 19.99f;
+            ipad += 19.99;
+            phone = phone.add(new BigDecimal("19.99"));
+        }
+        System.out.println(laptop + " | " + ipad + " | " + phone);
+
+        // Comparing
+        System.out.println("Float vs Double: " + (laptop == ipad));
+
+        System.out.println("Double vs BigDecimal: " +
+                (BigDecimal.valueOf(ipad).compareTo(phone) == 0));
     }
 }
